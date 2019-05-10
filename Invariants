@@ -1,0 +1,37 @@
+1.  Hashing Strings, Example 9,8, page 329
+
+Explain the state in terms of the range of possible values of intlength.  (This is not a loop invariant.)
+
+int sfold(char* key) { 
+unsigned int *lkey = (unsigned int *)key; 
+int intlength = strlen(key)/4; 
+//Invariant:  
+unsigned int sum = 0; for(int i=0; i
+
+
+2.  Linear Probing for Closed Hashing, Figure 9.6, page 334
+
+Explain the state in terms of i, HT, pos, and key.  EMPTYKEY is a named constant like NULL.
+
+// Init probe sequence
+
+for (int i=1; EMPTYKEY != (HT[pos]).key(); i++)  {
+// Invariant:  
+pos = (home + p(k, i)) % M; 
+
+3.  Breadth-first graph search, Figure 11.10, page 396
+
+Explain in terms of v and w.
+
+void BFS(Graph* G, int start, Queue* Q) { 
+...
+while (Q->length() != 0) { 
+for (w=G->first(v); w < G -> n(); w = G->next(v,w)) 
+//Invariant:  
+if (G->getMark(w) == UNVISITED) { 
+  G->setMark(w, VISITED); 
+  Q->enqueue(w);
+
+}
+
+}
